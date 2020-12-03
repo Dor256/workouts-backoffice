@@ -6,6 +6,7 @@ import Test exposing (Test, describe, test)
 import Test.Html.Event as Event
 import Test.Html.Query as Query
 import Test.Html.Selector as Selector
+import Main exposing (Action(..))
 
 
 buttonPress : Test
@@ -17,7 +18,7 @@ buttonPress =
                     |> Query.fromHtml
                     |> Query.find [ Selector.class "button" ]
                     |> Event.simulate Event.click
-                    |> Event.expect Press
+                    |> Event.expect (OnChange "Shmup")
         ]
 
 

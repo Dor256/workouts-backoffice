@@ -31,7 +31,7 @@ init _ =
       , search = ""
       , workouts = []
       }
-    , getWorkouts GotWorkouts
+    , Cmd.none
     )
 
 
@@ -53,7 +53,7 @@ update action model =
                     else
                         "Elm"
               }
-            , Cmd.none
+            , if List.length model.workouts == 0 then getWorkouts GotWorkouts else Cmd.none
             )
 
         OnChange text ->

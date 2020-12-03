@@ -784,11 +784,11 @@ function _Debug_crash_UNUSED(identifier, fact1, fact2, fact3, fact4)
 
 function _Debug_regionToString(region)
 {
-	if (region._.G === region.aj.G)
+	if (region._.H === region.aj.H)
 	{
-		return 'on line ' + region._.G;
+		return 'on line ' + region._.H;
 	}
-	return 'on lines ' + region._.G + ' through ' + region.aj.G;
+	return 'on lines ' + region._.H + ' through ' + region.aj.H;
 }
 
 
@@ -3982,7 +3982,7 @@ var _Browser_document = _Debugger_document || F4(function(impl, flagDecoder, deb
 				bodyNode = _VirtualDom_applyPatches(bodyNode, currNode, patches, sendToApp);
 				currNode = nextNode;
 				_VirtualDom_divertHrefToApp = 0;
-				(title !== doc.L) && (_VirtualDom_doc.title = title = doc.L);
+				(title !== doc.M) && (_VirtualDom_doc.title = title = doc.M);
 			});
 		}
 	);
@@ -5313,6 +5313,18 @@ var $elm$core$Task$perform = F2(
 			A2($elm$core$Task$map, toMessage, task));
 	});
 var $elm$browser$Browser$element = _Browser_element;
+var $elm$core$Platform$Cmd$batch = _Platform_batch;
+var $elm$core$Platform$Cmd$none = $elm$core$Platform$Cmd$batch(_List_Nil);
+var $author$project$Main$init = function (_v0) {
+	return _Utils_Tuple2(
+		{S: '', M: 'Elm', F: _List_Nil},
+		$elm$core$Platform$Cmd$none);
+};
+var $elm$core$Platform$Sub$batch = _Platform_batch;
+var $elm$core$Platform$Sub$none = $elm$core$Platform$Sub$batch(_List_Nil);
+var $author$project$Main$subscriptions = function (model) {
+	return $elm$core$Platform$Sub$none;
+};
 var $author$project$Main$GotWorkouts = function (a) {
 	return {$: 2, a: a};
 };
@@ -6122,18 +6134,6 @@ var $author$project$Api$getWorkouts = function (action) {
 			bE: $author$project$Api$baseUrl + '/workout'
 		});
 };
-var $author$project$Main$init = function (_v0) {
-	return _Utils_Tuple2(
-		{S: '', L: 'Elm', O: _List_Nil},
-		$author$project$Api$getWorkouts($author$project$Main$GotWorkouts));
-};
-var $elm$core$Platform$Sub$batch = _Platform_batch;
-var $elm$core$Platform$Sub$none = $elm$core$Platform$Sub$batch(_List_Nil);
-var $author$project$Main$subscriptions = function (model) {
-	return $elm$core$Platform$Sub$none;
-};
-var $elm$core$Platform$Cmd$batch = _Platform_batch;
-var $elm$core$Platform$Cmd$none = $elm$core$Platform$Cmd$batch(_List_Nil);
 var $author$project$Main$update = F2(
 	function (action, model) {
 		switch (action.$) {
@@ -6142,9 +6142,9 @@ var $author$project$Main$update = F2(
 					_Utils_update(
 						model,
 						{
-							L: (model.L === 'Elm') ? 'Workouts' : 'Elm'
+							M: (model.M === 'Elm') ? 'Workouts' : 'Elm'
 						}),
-					$elm$core$Platform$Cmd$none);
+					(!$elm$core$List$length(model.F)) ? $author$project$Api$getWorkouts($author$project$Main$GotWorkouts) : $elm$core$Platform$Cmd$none);
 			case 1:
 				var text = action.a;
 				return _Utils_Tuple2(
@@ -6158,14 +6158,14 @@ var $author$project$Main$update = F2(
 					return _Utils_Tuple2(
 						_Utils_update(
 							model,
-							{O: res}),
+							{F: res}),
 						$elm$core$Platform$Cmd$none);
 				} else {
 					var res = action.a.a;
 					return _Utils_Tuple2(
 						_Utils_update(
 							model,
-							{O: _List_Nil}),
+							{F: _List_Nil}),
 						$elm$core$Platform$Cmd$none);
 				}
 		}
@@ -6257,7 +6257,7 @@ var $author$project$Main$view = function (model) {
 				_List_Nil,
 				_List_fromArray(
 					[
-						$elm$html$Html$text(model.L)
+						$elm$html$Html$text(model.M)
 					])),
 				A2(
 				$elm$html$Html$div,
@@ -6300,7 +6300,7 @@ var $author$project$Main$view = function (model) {
 											$elm$html$Html$text(workout.bg)
 										]));
 							},
-							model.O))
+							model.F))
 					]))
 			]));
 };

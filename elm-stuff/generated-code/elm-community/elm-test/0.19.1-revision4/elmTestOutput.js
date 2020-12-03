@@ -4218,9 +4218,7 @@ var $elm$core$Basics$apR = F2(
 	function (x, f) {
 		return f(x);
 	});
-var $author$project$Main$OnChange = function (a) {
-	return {$: 'OnChange', a: a};
-};
+var $author$project$Main$Press = {$: 'Press'};
 var $elm$core$Basics$apL = F2(
 	function (f, x) {
 		return f(x);
@@ -6972,7 +6970,9 @@ var $elm_explorations$test$Test$test = F2(
 						]);
 				}));
 	});
-var $author$project$Main$Press = {$: 'Press'};
+var $author$project$Main$OnChange = function (a) {
+	return {$: 'OnChange', a: a};
+};
 var $elm$virtual_dom$VirtualDom$toHandlerInt = function (handler) {
 	switch (handler.$) {
 		case 'Normal':
@@ -7116,7 +7116,7 @@ var $author$project$MainTest$buttonPress = A2(
 			function (_v0) {
 				return A2(
 					$elm_explorations$test$Test$Html$Event$expect,
-					$author$project$Main$OnChange('Shmup'),
+					$author$project$Main$Press,
 					A2(
 						$elm_explorations$test$Test$Html$Event$simulate,
 						$elm_explorations$test$Test$Html$Event$click,
@@ -9990,7 +9990,7 @@ var $author$project$Test$Runner$Node$run = F2(
 				update: $author$project$Test$Runner$Node$update
 			});
 	});
-var $author$project$Test$Generated$Main1648893017$main = A2(
+var $author$project$Test$Generated$Main3355907187$main = A2(
 	$author$project$Test$Runner$Node$run,
 	{
 		globs: _List_Nil,
@@ -9999,7 +9999,7 @@ var $author$project$Test$Generated$Main1648893017$main = A2(
 		processes: 12,
 		report: $author$project$Test$Reporter$Reporter$ConsoleReport($author$project$Console$Text$UseColor),
 		runs: $elm$core$Maybe$Nothing,
-		seed: 289745116209079
+		seed: 237226687990344
 	},
 	$elm_explorations$test$Test$concat(
 		_List_fromArray(
@@ -10010,10 +10010,10 @@ var $author$project$Test$Generated$Main1648893017$main = A2(
 				_List_fromArray(
 					[$author$project$MainTest$buttonPress, $author$project$MainTest$inputType]))
 			])));
-_Platform_export({'Test':{'Generated':{'Main1648893017':{'init':$author$project$Test$Generated$Main1648893017$main($elm$json$Json$Decode$int)(0)}}}});}(this));
+_Platform_export({'Test':{'Generated':{'Main3355907187':{'init':$author$project$Test$Generated$Main3355907187$main($elm$json$Json$Decode$int)(0)}}}});}(this));
 return this.Elm;
 })({});
-var pipeFilename = "/tmp/elm_test-10494.sock";
+var pipeFilename = "/tmp/elm_test-10571.sock";
 // Make sure necessary things are defined.
 if (typeof Elm === 'undefined') {
   throw 'test runner config error: Elm is not defined. Make sure you provide a file compiled by Elm!';

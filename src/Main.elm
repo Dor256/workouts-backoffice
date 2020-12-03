@@ -53,7 +53,11 @@ update action model =
                     else
                         "Elm"
               }
-            , if List.length model.workouts == 0 then getWorkouts GotWorkouts else Cmd.none
+            , if List.length model.workouts == 0 then
+                getWorkouts GotWorkouts
+
+              else
+                Cmd.none
             )
 
         OnChange text ->

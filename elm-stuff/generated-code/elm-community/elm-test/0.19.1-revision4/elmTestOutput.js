@@ -9990,7 +9990,7 @@ var $author$project$Test$Runner$Node$run = F2(
 				update: $author$project$Test$Runner$Node$update
 			});
 	});
-var $author$project$Test$Generated$Main3355907187$main = A2(
+var $author$project$Test$Generated$Main1675298245$main = A2(
 	$author$project$Test$Runner$Node$run,
 	{
 		globs: _List_Nil,
@@ -9999,7 +9999,7 @@ var $author$project$Test$Generated$Main3355907187$main = A2(
 		processes: 12,
 		report: $author$project$Test$Reporter$Reporter$ConsoleReport($author$project$Console$Text$UseColor),
 		runs: $elm$core$Maybe$Nothing,
-		seed: 237226687990344
+		seed: 60483088944518
 	},
 	$elm_explorations$test$Test$concat(
 		_List_fromArray(
@@ -10010,10 +10010,10 @@ var $author$project$Test$Generated$Main3355907187$main = A2(
 				_List_fromArray(
 					[$author$project$MainTest$buttonPress, $author$project$MainTest$inputType]))
 			])));
-_Platform_export({'Test':{'Generated':{'Main3355907187':{'init':$author$project$Test$Generated$Main3355907187$main($elm$json$Json$Decode$int)(0)}}}});}(this));
+_Platform_export({'Test':{'Generated':{'Main1675298245':{'init':$author$project$Test$Generated$Main1675298245$main($elm$json$Json$Decode$int)(0)}}}});}(this));
 return this.Elm;
 })({});
-var pipeFilename = "/tmp/elm_test-10571.sock";
+var pipeFilename = "/tmp/elm_test-10683.sock";
 // Make sure necessary things are defined.
 if (typeof Elm === 'undefined') {
   throw 'test runner config error: Elm is not defined. Make sure you provide a file compiled by Elm!';

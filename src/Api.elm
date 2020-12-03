@@ -5,8 +5,9 @@ import Json.Decode as Decode exposing (Decoder, bool, field, int, list, string)
 
 
 type alias Workout =
-  { name : String
-  }
+    { name : String
+    }
+
 
 baseUrl : String
 baseUrl =

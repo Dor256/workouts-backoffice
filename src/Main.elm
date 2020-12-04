@@ -86,7 +86,7 @@ update action model =
                 Nothing ->
                     ( model, Cmd.none )
 
-        AddWorkout (Err res) ->
+        _ ->
             ( model, Cmd.none )
 
 

@@ -1,4 +1,4 @@
-.container {
+main {
   margin: 0 25%;
   display: flex;
   flex-direction: column;
@@ -6,9 +6,77 @@
   align-items: center;
 }
 
+.loader-container {
+  margin-top: 40%;
+}
+
+.loader {
+  background-color: #5ea0d6;
+  position: absolute;
+  margin: auto auto;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 55px;
+  height: 55px;
+  animation: bubble .6s infinite alternate ease-in;
+  border-radius: 100%;
+  display: block;
+  box-shadow: 0 2px 6px 1px #e1e5e8;
+}
+
+@keyframes bubble {
+  100% {
+    transform: scale(1);
+  }
+
+  0% {
+    transform: scale(.6);
+  }
+}
+
+.inner-loader {
+  position: absolute;
+  margin: auto auto;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: #5ea0d6;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  animation: pulse 1.2s infinite ease-out;
+}
+
+@keyframes pulse {
+  0%, 40%{
+    transform: scale(1);
+    opacity: 0;
+  }
+
+  45% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+
+  100% {
+    transform: scale(2);
+    opacity: 0
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  width: 100%;
+}
+
 input.searchbar {
   align-self: center;
-  width: 50%;
+  width: 45%;
   padding: 10px 20px;
   border: 1px solid #fff;
   border-radius: 5px;
@@ -26,5 +94,35 @@ input.searchbar:hover {
   -webkit-transition: box-shadow 200ms linear;
   -ms-transition:  box-shadow 200ms linear;
   transition:  box-shadow 200ms linear;
+  box-shadow: 0 4px 6px 1px #e1e5e8;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+.card {
+  padding: 1% 0 5% 0;
+  border: solid #fff 1px;
+  color: #20455e;
+  border-radius: 15px;
+  box-shadow: 0 2px 6px 1px #e1e5e8;
+  width: 50%;
+  cursor: pointer;
+  -webkit-transition: box-shadow 200ms linear;
+  -ms-transition: box-shadow 200ms linear;
+  transition: box-shadow 200ms linear;
+  margin-bottom: 5%;
+  text-align: center;
+}
+
+.card:hover {
+  -webkit-transition: box-shadow 200ms linear;
+  -ms-transition: box-shadow 200ms linear;
+  transition: box-shadow 200ms linear;
   box-shadow: 0 4px 6px 1px #e1e5e8;
 }

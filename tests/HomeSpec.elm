@@ -1,4 +1,4 @@
-module MainSpec exposing (..)
+module HomeSpec exposing (..)
 
 import Expect exposing (Expectation)
 import Html.Events exposing (keyCode)

@@ -6958,7 +6958,7 @@ var $elm$json$Json$Encode$object = function (pairs) {
 			_Json_emptyObject(_Utils_Tuple0),
 			pairs));
 };
-var $author$project$MainSpec$simulatedEvent = $elm$json$Json$Encode$object(
+var $author$project$HomeSpec$simulatedEvent = $elm$json$Json$Encode$object(
 	_List_fromArray(
 		[
 			_Utils_Tuple2(
@@ -7155,7 +7155,7 @@ var $author$project$Page$Home$view = function (model) {
 			}
 		}());
 };
-var $author$project$MainSpec$addWorkoutTest = A2(
+var $author$project$HomeSpec$addWorkoutTest = A2(
 	$elm_explorations$test$Test$describe,
 	'Add workout',
 	_List_fromArray(
@@ -7169,7 +7169,7 @@ var $author$project$MainSpec$addWorkoutTest = A2(
 					$author$project$Page$Home$OnSubmit($author$project$Page$Home$enterKey),
 					A2(
 						$elm_explorations$test$Test$Html$Event$simulate,
-						A2($elm_explorations$test$Test$Html$Event$custom, 'keypress', $author$project$MainSpec$simulatedEvent),
+						A2($elm_explorations$test$Test$Html$Event$custom, 'keypress', $author$project$HomeSpec$simulatedEvent),
 						A2(
 							$elm_explorations$test$Test$Html$Query$find,
 							_List_fromArray(
@@ -7226,7 +7226,7 @@ var $elm_explorations$test$Test$Html$Event$input = function (value) {
 							])))
 				])));
 };
-var $author$project$MainSpec$inputTest = A2(
+var $author$project$HomeSpec$inputTest = A2(
 	$elm_explorations$test$Test$describe,
 	'Input',
 	_List_fromArray(
@@ -7402,7 +7402,7 @@ var $elm_explorations$test$Test$Html$Query$hasNot = F2(
 			query,
 			A2($elm_explorations$test$Test$Html$Query$Internal$hasNot, selectors, query));
 	});
-var $author$project$MainSpec$loaderTest = A2(
+var $author$project$HomeSpec$loaderTest = A2(
 	$elm_explorations$test$Test$describe,
 	'Loader',
 	_List_fromArray(
@@ -10237,7 +10237,7 @@ var $elm_explorations$test$Test$Html$Selector$Internal$Text = function (a) {
 	return {$: 'Text', a: a};
 };
 var $elm_explorations$test$Test$Html$Selector$text = $elm_explorations$test$Test$Html$Selector$Internal$Text;
-var $author$project$MainSpec$workoutListTest = A2(
+var $author$project$HomeSpec$workoutListTest = A2(
 	$elm_explorations$test$Test$describe,
 	'Workout list',
 	_List_fromArray(
@@ -10270,30 +10270,30 @@ var $author$project$MainSpec$workoutListTest = A2(
 								}))));
 			})
 		]));
-var $author$project$Test$Generated$Main1320159841$main = A2(
+var $author$project$Test$Generated$Main3229344131$main = A2(
 	$author$project$Test$Runner$Node$run,
 	{
 		globs: _List_Nil,
 		paths: _List_fromArray(
-			['/Users/dor/Workspace/workouts-backoffice/tests/MainSpec.elm']),
+			['/Users/dor/Workspace/workouts-backoffice/tests/HomeSpec.elm']),
 		processes: 12,
 		report: $author$project$Test$Reporter$Reporter$ConsoleReport($author$project$Console$Text$UseColor),
 		runs: $elm$core$Maybe$Nothing,
-		seed: 116960050624912
+		seed: 29521350632575
 	},
 	$elm_explorations$test$Test$concat(
 		_List_fromArray(
 			[
 				A2(
 				$elm_explorations$test$Test$describe,
-				'MainSpec',
+				'HomeSpec',
 				_List_fromArray(
-					[$author$project$MainSpec$addWorkoutTest, $author$project$MainSpec$inputTest, $author$project$MainSpec$loaderTest, $author$project$MainSpec$workoutListTest]))
+					[$author$project$HomeSpec$addWorkoutTest, $author$project$HomeSpec$inputTest, $author$project$HomeSpec$loaderTest, $author$project$HomeSpec$workoutListTest]))
 			])));
-_Platform_export({'Test':{'Generated':{'Main1320159841':{'init':$author$project$Test$Generated$Main1320159841$main($elm$json$Json$Decode$int)(0)}}}});}(this));
+_Platform_export({'Test':{'Generated':{'Main3229344131':{'init':$author$project$Test$Generated$Main3229344131$main($elm$json$Json$Decode$int)(0)}}}});}(this));
 return this.Elm;
 })({});
-var pipeFilename = "/tmp/elm_test-21498.sock";
+var pipeFilename = "/tmp/elm_test-21656.sock";
 // Make sure necessary things are defined.
 if (typeof Elm === 'undefined') {
   throw 'test runner config error: Elm is not defined. Make sure you provide a file compiled by Elm!';

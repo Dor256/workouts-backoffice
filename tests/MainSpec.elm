@@ -3,7 +3,7 @@ module MainSpec exposing (..)
 import Expect exposing (Expectation)
 import Html.Events exposing (keyCode)
 import Json.Encode as Encode exposing (Value)
-import Main exposing (..)
+import Page.Home exposing (..)
 import Test exposing (Test, describe, test)
 import Test.Html.Event as Event
 import Test.Html.Query as Query

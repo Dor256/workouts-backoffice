@@ -22,7 +22,7 @@ baseUrl =
 getWorkouts : (Response (List Workout) -> action) -> Cmd action
 getWorkouts action =
     Http.get
-        { url = baseUrl ++ "/workout"
+        { url = baseUrl ++ "/workouts"
         , expect = Http.expectJson action workoutListDecoder
         }
 
@@ -30,7 +30,7 @@ getWorkouts action =
 addWorkout : (Response () -> action) -> Workout -> Cmd action
 addWorkout action workout =
     Http.post
-        { url = baseUrl ++ "/workout"
+        { url = baseUrl ++ "/workouts"
         , body = workoutEncoder workout |> Http.jsonBody
         , expect = Http.expectWhatever action
         }

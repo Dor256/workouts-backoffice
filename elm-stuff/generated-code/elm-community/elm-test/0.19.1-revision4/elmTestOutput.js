@@ -4217,7 +4217,7 @@ var $author$project$Console$Text$UseColor = {$: 'UseColor'};
 var $elm$core$Maybe$Just = function (a) {
 	return {$: 'Just', a: a};
 };
-var $author$project$Main$OnSubmit = function (a) {
+var $author$project$Page$Home$OnSubmit = function (a) {
 	return {$: 'OnSubmit', a: a};
 };
 var $elm$core$Basics$apL = F2(
@@ -4668,7 +4668,7 @@ var $elm_explorations$test$Test$describe = F2(
 			}
 		}
 	});
-var $author$project$Main$enterKey = 13;
+var $author$project$Page$Home$enterKey = 13;
 var $elm_explorations$test$Test$Html$Event$Event = F2(
 	function (a, b) {
 		return {$: 'Event', a: a, b: b};
@@ -6984,7 +6984,7 @@ var $elm_explorations$test$Test$test = F2(
 						]);
 				}));
 	});
-var $author$project$Main$OnChange = function (a) {
+var $author$project$Page$Home$OnChange = function (a) {
 	return {$: 'OnChange', a: a};
 };
 var $elm$virtual_dom$VirtualDom$toHandlerInt = function (handler) {
@@ -7089,7 +7089,7 @@ var $elm$html$Html$Events$on = F2(
 			event,
 			$elm$virtual_dom$VirtualDom$Normal(decoder));
 	});
-var $author$project$Main$onKeyPress = function (mapper) {
+var $author$project$Page$Home$onKeyPress = function (mapper) {
 	return A2(
 		$elm$html$Html$Events$on,
 		'keypress',
@@ -7098,7 +7098,7 @@ var $author$project$Main$onKeyPress = function (mapper) {
 var $elm$html$Html$Attributes$placeholder = $elm$html$Html$Attributes$stringProperty('placeholder');
 var $elm$html$Html$Attributes$type_ = $elm$html$Html$Attributes$stringProperty('type');
 var $elm$html$Html$Attributes$value = $elm$html$Html$Attributes$stringProperty('value');
-var $author$project$Main$view = function (model) {
+var $author$project$Page$Home$view = function (model) {
 	return A2(
 		$elm$html$Html$main_,
 		_List_Nil,
@@ -7128,8 +7128,8 @@ var $author$project$Main$view = function (model) {
 								_List_fromArray(
 									[
 										$elm$html$Html$Attributes$type_('text'),
-										$elm$html$Html$Events$onInput($author$project$Main$OnChange),
-										$author$project$Main$onKeyPress($author$project$Main$OnSubmit),
+										$elm$html$Html$Events$onInput($author$project$Page$Home$OnChange),
+										$author$project$Page$Home$onKeyPress($author$project$Page$Home$OnSubmit),
 										$elm$html$Html$Attributes$class('searchbar'),
 										$elm$html$Html$Attributes$placeholder('Enter workout...'),
 										$elm$html$Html$Attributes$value(model.search)
@@ -7166,7 +7166,7 @@ var $author$project$MainSpec$addWorkoutTest = A2(
 			function (_v0) {
 				return A2(
 					$elm_explorations$test$Test$Html$Event$expect,
-					$author$project$Main$OnSubmit($author$project$Main$enterKey),
+					$author$project$Page$Home$OnSubmit($author$project$Page$Home$enterKey),
 					A2(
 						$elm_explorations$test$Test$Html$Event$simulate,
 						A2($elm_explorations$test$Test$Html$Event$custom, 'keypress', $author$project$MainSpec$simulatedEvent),
@@ -7177,7 +7177,7 @@ var $author$project$MainSpec$addWorkoutTest = A2(
 									$elm_explorations$test$Test$Html$Selector$class('searchbar')
 								]),
 							$elm_explorations$test$Test$Html$Query$fromHtml(
-								$author$project$Main$view(
+								$author$project$Page$Home$view(
 									{
 										search: 'mockWorkout',
 										workouts: $elm$core$Maybe$Just(
@@ -7237,7 +7237,7 @@ var $author$project$MainSpec$inputTest = A2(
 			function (_v0) {
 				return A2(
 					$elm_explorations$test$Test$Html$Event$expect,
-					$author$project$Main$OnChange('text'),
+					$author$project$Page$Home$OnChange('text'),
 					A2(
 						$elm_explorations$test$Test$Html$Event$simulate,
 						$elm_explorations$test$Test$Html$Event$input('text'),
@@ -7248,7 +7248,7 @@ var $author$project$MainSpec$inputTest = A2(
 									$elm_explorations$test$Test$Html$Selector$class('searchbar')
 								]),
 							$elm_explorations$test$Test$Html$Query$fromHtml(
-								$author$project$Main$view(
+								$author$project$Page$Home$view(
 									{
 										search: '',
 										workouts: $elm$core$Maybe$Just(
@@ -7418,7 +7418,7 @@ var $author$project$MainSpec$loaderTest = A2(
 							$elm_explorations$test$Test$Html$Selector$class('loader')
 						]),
 					$elm_explorations$test$Test$Html$Query$fromHtml(
-						$author$project$Main$view(
+						$author$project$Page$Home$view(
 							{search: '', workouts: $elm$core$Maybe$Nothing})));
 			}),
 			A2(
@@ -7432,7 +7432,7 @@ var $author$project$MainSpec$loaderTest = A2(
 							$elm_explorations$test$Test$Html$Selector$class('loader')
 						]),
 					$elm_explorations$test$Test$Html$Query$fromHtml(
-						$author$project$Main$view(
+						$author$project$Page$Home$view(
 							{
 								search: '',
 								workouts: $elm$core$Maybe$Just(
@@ -10259,7 +10259,7 @@ var $author$project$MainSpec$workoutListTest = A2(
 								$elm_explorations$test$Test$Html$Selector$class('card')
 							]),
 						$elm_explorations$test$Test$Html$Query$fromHtml(
-							$author$project$Main$view(
+							$author$project$Page$Home$view(
 								{
 									search: '',
 									workouts: $elm$core$Maybe$Just(
@@ -10270,7 +10270,7 @@ var $author$project$MainSpec$workoutListTest = A2(
 								}))));
 			})
 		]));
-var $author$project$Test$Generated$Main2417144669$main = A2(
+var $author$project$Test$Generated$Main1320159841$main = A2(
 	$author$project$Test$Runner$Node$run,
 	{
 		globs: _List_Nil,
@@ -10279,7 +10279,7 @@ var $author$project$Test$Generated$Main2417144669$main = A2(
 		processes: 12,
 		report: $author$project$Test$Reporter$Reporter$ConsoleReport($author$project$Console$Text$UseColor),
 		runs: $elm$core$Maybe$Nothing,
-		seed: 208013987085664
+		seed: 116960050624912
 	},
 	$elm_explorations$test$Test$concat(
 		_List_fromArray(
@@ -10290,10 +10290,10 @@ var $author$project$Test$Generated$Main2417144669$main = A2(
 				_List_fromArray(
 					[$author$project$MainSpec$addWorkoutTest, $author$project$MainSpec$inputTest, $author$project$MainSpec$loaderTest, $author$project$MainSpec$workoutListTest]))
 			])));
-_Platform_export({'Test':{'Generated':{'Main2417144669':{'init':$author$project$Test$Generated$Main2417144669$main($elm$json$Json$Decode$int)(0)}}}});}(this));
+_Platform_export({'Test':{'Generated':{'Main1320159841':{'init':$author$project$Test$Generated$Main1320159841$main($elm$json$Json$Decode$int)(0)}}}});}(this));
 return this.Elm;
 })({});
-var pipeFilename = "/tmp/elm_test-33359.sock";
+var pipeFilename = "/tmp/elm_test-21498.sock";
 // Make sure necessary things are defined.
 if (typeof Elm === 'undefined') {
   throw 'test runner config error: Elm is not defined. Make sure you provide a file compiled by Elm!';

@@ -79,11 +79,6 @@ update action model =
             ( model, Cmd.none )
 
 
-subscriptions : Model -> Sub Msg
-subscriptions model =
-    Sub.none
-
-
 enterKey : Int
 enterKey =
     13
@@ -103,7 +98,7 @@ view model =
             Just workouts ->
                 [ h1 [] [ text "Workouts" ]
                 , div
-                    [ class "container" ]
+                    [ class "container " ]
                     [ input
                         [ type_ "text"
                         , onInput OnChange

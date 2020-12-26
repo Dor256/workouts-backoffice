@@ -6,7 +6,8 @@ import Url.Parser exposing (..)
 
 
 type Route
-    = Login
+    = NotFound
+    | Login
     | Home
 
 
@@ -17,7 +18,7 @@ parseUrl url =
             route
 
         Nothing ->
-            Login
+            NotFound
 
 
 matchRoute : Parser (Route -> a) a
@@ -36,6 +37,9 @@ pushUrl route navKey =
 routeToString : Route -> String
 routeToString route =
     case route of
+        NotFound ->
+            "/not-found"
+
         Login ->
             "/"
 

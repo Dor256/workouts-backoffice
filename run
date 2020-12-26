@@ -1,3 +1,6 @@
 #!/bin/zsh
+echo "Clearing port 8000"
+lsof -t -i tcp:8000 | xargs kill
+
 echo "Starting dev server on port 8000"
-python3 -m http.server --directory dist 8000
+cd dist && python3 dev-server.py

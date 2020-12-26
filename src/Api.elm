@@ -10,6 +10,12 @@ type alias Workout =
     }
 
 
+type alias Cred =
+    { email : String
+    , password : String
+    }
+
+
 type alias Response result =
     Result Http.Error result
 
@@ -19,20 +25,29 @@ baseUrl =
     "http://localhost:3000"
 
 
-getWorkouts : (Response (List Workout) -> action) -> Cmd action
-getWorkouts action =
+getWorkouts : (Response (List Workout) -> msg) -> Cmd msg
+getWorkouts msg =
     Http.get
         { url = baseUrl ++ "/workouts"
-        , expect = Http.expectJson action workoutListDecoder
+        , expect = Http.expectJson msg workoutListDecoder
         }
 
 
-addWorkout : (Response () -> action) -> Workout -> Cmd action
-addWorkout action workout =
+addWorkout : (Response () -> msg) -> Workout -> Cmd msg
+addWorkout msg workout =
     Http.post
         { url = baseUrl ++ "/workouts"
         , body = workoutEncoder workout |> Http.jsonBody
-        , expect = Http.expectWhatever action
+        , expect = Http.expectWhatever msg
+        }
+
+
+logIn : (Response () -> msg) -> Cred -> Cmd msg
+logIn msg cred =
+    Http.post
+        { url = baseUrl ++ "/login"
+        , body = credEncoder cred |> Http.jsonBody
+        , expect = Http.expectWhatever msg
         }
 
 
@@ -56,4 +71,12 @@ workoutEncoder : Workout -> Value
 workoutEncoder workout =
     Encode.object
         [ ( "name", Encode.string workout.name )
+        ]
+
+
+credEncoder : Cred -> Value
+credEncoder cred =
+    Encode.object
+        [ ( "email", Encode.string cred.email )
+        , ( "password", Encode.string cred.password )
         ]

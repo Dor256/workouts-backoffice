@@ -35,7 +35,8 @@ type alias Model =
 
 
 type Page
-    = LoginPage
+    = NotFoundPage
+    | LoginPage Login.Model
     | HomePage Home.Model
 
 
@@ -44,7 +45,7 @@ init flags url key =
     let
         model =
             { route = Route.parseUrl url
-            , page = LoginPage
+            , page = NotFoundPage
             , navKey = key
             }
     in
@@ -57,7 +58,11 @@ initCurrentPage ( model, cmds ) =
         ( currentPage, pageCmds ) =
             case model.route of
                 Route.Login ->
-                    ( LoginPage, Cmd.none )
+                    let
+                        ( loginModel, loginCmds ) =
+                            Login.init model.navKey
+                    in
+                    ( LoginPage loginModel, Cmd.map LoginPageMsg loginCmds )
 
                 Route.Home ->
                     let
@@ -65,6 +70,9 @@ initCurrentPage ( model, cmds ) =
                             Home.init
                     in
                     ( HomePage homeModel, Cmd.map HomePageMsg homeCmds )
+
+                Route.NotFound ->
+                    ( NotFoundPage, Cmd.none )
     in
     ( { model | page = currentPage }
     , Cmd.batch [ cmds, pageCmds ]
@@ -94,9 +102,13 @@ update msg model =
             , Cmd.map HomePageMsg updatedCmd
             )
 
-        ( LoginPageMsg loginMsg, _ ) ->
-            ( { model | page = LoginPage }
-            , Cmd.map LoginPageMsg (Login.onLogin loginMsg)
+        ( LoginPageMsg loginMsg, LoginPage loginModel ) ->
+            let
+                ( updatedLoginModel, updatedCmd ) =
+                    Login.update loginMsg loginModel
+            in
+            ( { model | page = LoginPage updatedLoginModel }
+            , Cmd.map LoginPageMsg updatedCmd
             )
 
         ( LinkClicked urlRequest, _ ) ->
@@ -138,8 +150,11 @@ view model =
 viewer : Model -> Html Msg
 viewer model =
     case model.page of
-        LoginPage ->
-            Login.view model.navKey
+        NotFoundPage ->
+            div [] [ text "Oopsie looks like a 404!" ]
+
+        LoginPage loginModel ->
+            Login.view loginModel
                 |> Html.map LoginPageMsg
 
         HomePage homeModel ->

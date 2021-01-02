@@ -45,7 +45,7 @@ addWorkout msg workout =
 logIn : (Response () -> msg) -> Cred -> Cmd msg
 logIn msg cred =
     Http.post
-        { url = baseUrl ++ "/login"
+        { url = baseUrl ++ "/auth/login"
         , body = credEncoder cred |> Http.jsonBody
         , expect = Http.expectWhatever msg
         }

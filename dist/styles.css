@@ -30,6 +30,24 @@ main {
   margin: 10% 25%;
 }
 
+.login-error-active {
+  align-self: center;
+  margin-bottom: 3%;
+  color: rgb(166, 65, 65);
+  background-color: rgb(255, 173, 178);
+  padding: 10px;
+  border: 1px solid rgb(233, 148, 148);
+  border-radius: 5px;
+  -webkit-transition: opacity 200ms linear, margin-bottom 200ms linear;
+  -ms-transition: opacity 200ms linear, margin-bottom 200ms linear;
+  transition: opacity 200ms linear, margin-bottom 200ms linear;
+  opacity: 1;
+}
+
+.login-error-inactive {
+  opacity: 0;
+}
+
 .button {
   align-self: center;
   color: white;

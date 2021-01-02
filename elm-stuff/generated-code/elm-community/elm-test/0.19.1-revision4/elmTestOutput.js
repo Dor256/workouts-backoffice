@@ -10270,7 +10270,7 @@ var $author$project$HomeSpec$workoutListTest = A2(
 								}))));
 			})
 		]));
-var $author$project$Test$Generated$Main3817684642$main = A2(
+var $author$project$Test$Generated$Main2578012983$main = A2(
 	$author$project$Test$Runner$Node$run,
 	{
 		globs: _List_Nil,
@@ -10279,7 +10279,7 @@ var $author$project$Test$Generated$Main3817684642$main = A2(
 		processes: 12,
 		report: $author$project$Test$Reporter$Reporter$ConsoleReport($author$project$Console$Text$UseColor),
 		runs: $elm$core$Maybe$Nothing,
-		seed: 115617663916237
+		seed: 349720266652439
 	},
 	$elm_explorations$test$Test$concat(
 		_List_fromArray(
@@ -10290,10 +10290,10 @@ var $author$project$Test$Generated$Main3817684642$main = A2(
 				_List_fromArray(
 					[$author$project$HomeSpec$addWorkoutTest, $author$project$HomeSpec$inputTest, $author$project$HomeSpec$loaderTest, $author$project$HomeSpec$workoutListTest]))
 			])));
-_Platform_export({'Test':{'Generated':{'Main3817684642':{'init':$author$project$Test$Generated$Main3817684642$main($elm$json$Json$Decode$int)(0)}}}});}(this));
+_Platform_export({'Test':{'Generated':{'Main2578012983':{'init':$author$project$Test$Generated$Main2578012983$main($elm$json$Json$Decode$int)(0)}}}});}(this));
 return this.Elm;
 })({});
-var pipeFilename = "/tmp/elm_test-27427.sock";
+var pipeFilename = "/tmp/elm_test-8429.sock";
 // Make sure necessary things are defined.
 if (typeof Elm === 'undefined') {
   throw 'test runner config error: Elm is not defined. Make sure you provide a file compiled by Elm!';
